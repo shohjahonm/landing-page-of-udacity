@@ -42,6 +42,7 @@ const navBuilder = () => {
 
     let navUI = '';
     // looping over all sections
+
     sections.forEach(section => {
 
         const sectionID = section.id;
@@ -61,14 +62,14 @@ navBuilder();
 
 // Getting the largest value that's less or equal to the number 
 const offset = (section) => {
-    return Math.floor(section.getBoundingClientRect().top);
+    return Math.round(section.getBoundingClientRect().top);
 };
 
 //Remove the active class
 const removeActive = (conditional, section) => {
     if (conditional) {
         section.classList.add('your-active-class');
-        section.style.cssText = "linear-gradient(0deg, rgba(255, 255, 255, .1) 0%, rgba(255, 255, 255, .2) 100%);";
+        section.style.cssText = "#1bc1a9";
     };
 
 };
@@ -77,7 +78,7 @@ const removeActive = (conditional, section) => {
 const addActive = (conditional, section) => {
     if (conditional) {
         section.classList.add('your-active-class');
-        section.style.cssText = "linear-gradient(0deg, rgba(255, 255, 255, .1) 0%, rgba(255, 255, 255, .2) 100%);";
+        section.style.cssText = "#1bc1a9;";
     };
 };
 
@@ -102,7 +103,7 @@ const scrolling = () => {
     links.forEach(link => {
         link.addEventListener('click', () => {
             for (i = 0; i < sections; i++) {
-                sections[i].addEventListener("click", sectionScroll(link));
+                sections[i].addEventListener("click", sectionScroll(landing__container));
             };
         });
     });
@@ -110,12 +111,6 @@ const scrolling = () => {
 
 /**
  * End Main Functions
- * Begin Events
+ * 
  * 
  */
-
-// Build menu 
-
-// Scroll to section on link click
-
-// Set sections as active
